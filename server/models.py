@@ -3,6 +3,11 @@ from sqlalchemy.orm import validates
 from sqlalchemy.ext.hybrid import hybrid_property
 from config import db, bcrypt
 
+project_skill = db.Table('projects_skills', 
+                        db.Column('skill_id', db.Integer, db.ForeignKey('skills.id')),
+                        db.Column('project_id', db.Integer, db.ForeignKey('projects.id')))
+
+
 class User(db.Model, SerializerMixin):
 
     __tablename__ = 'users'
@@ -13,10 +18,13 @@ class User(db.Model, SerializerMixin):
     username = db.Column(db.String, nullable=False)
     image = db.Column(db.String, nullable=False)
     email = db.Column(db.String, nullable=False)
+    github = db.Column(db.String, nullable=False)
+    blog = db.Column(db.String, nullable=False)
+    about = db.Column(db.String, nullable=False)
     _password_hash = db.Column(db.String)
 
     projects = db.relationship('Project', back_populates='user', cascade='all, delete, delete-orphan')
-    skills = db.relationship('Skill', back_populates='user', cascade='all, delete, delete-orphan')
+    skills = db.relationship('Skill', back_populates='user')
 
     @hybrid_property
     def password_hash(self):
@@ -61,12 +69,13 @@ class Project(db.Model, SerializerMixin):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
     user = db.relationship('User', back_populates='projects')
+    skills = db.relationship('Skill', secondary='projects_skills', back_populates='projects')
 
 class Skill(db.Model, SerializerMixin):
 
     __tablename__ = 'skills'
 
-    serialize_rules = ('-user',)
+    serialize_rules = ('-user', '-projects',)
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, nullable=False)
@@ -74,3 +83,4 @@ class Skill(db.Model, SerializerMixin):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
     user = db.relationship('User', back_populates='skills')
+    projects = db.relationship('Project', secondary='projects_skills', back_populates='skills')

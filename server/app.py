@@ -13,6 +13,15 @@ def check_session():
         return True
     return False
 
+class UserById(Resource):
+    def delete(self, id):
+        user = User.query.filter(User.id == id).first()
+        if user:
+            db.session.delete(user)
+            db.session.commit()
+            return {"Message": "User deleted"}
+        return {'error': 'User not found'}
+
 class Signup(Resource):
 
     def post(self):
@@ -22,7 +31,10 @@ class Signup(Resource):
             new_user = User(
                 username = username,
                 image = request.get_json()['image'],
-                email = request.get_json()['email']
+                email = request.get_json()['email'],
+                github = request.get_json()['github'],
+                blog = request.get_json()['blog'],
+                about = request.get_json()['about']
         )
             new_user.password_hash = password
             db.session.add(new_user)
@@ -97,9 +109,21 @@ class ProjectById(Resource):
         if check_session():
             project = Project.query.filter(Project.id == id).first()
             if project:
-                return project.to_dict(), 200
+                return project.to_dict(rules=('skills',)), 200
             return {'error': 'Project not found'}, 404
         return {'error': "Unauthorized"}, 401
+    
+    def post(self, id):
+        if check_session():
+            skill = Skill.query.filter(Skill.id == request.get_json()['skill_id']).first()
+            project = Project.query.filter(Project.id == id).first()
+            if skill and project:
+                project.skills.append(skill)
+                db.session.commit()
+                return project.to_dict(), 202
+            return {'error': 'skill or project not located'}, 404
+        return {'error': 'Unauthorized'}, 401
+
     
     def patch(self, id):
         if check_session():
@@ -110,18 +134,76 @@ class ProjectById(Resource):
                 return project.to_dict(), 200
             return {'error': 'Project not found'}, 404
         return {'error': 'Unauthorized'}, 401    
+    
+    def delete(self, id):
+        if check_session():
+            project = Project.query.filter(Project.id == id).first()
+            if project: 
+                db.session.delete(project)
+                db.session.commit()
+                return {'Message': 'Project deleted'}, 204
+            return {'error': 'The requested Project could not be located'}, 404
+        return {'error': 'Unauthorized'}, 401
+    
+class Skills(Resource):
 
+    def get(self):
+        if check_session():
+            skills = Skill.query.filter(Skill.user_id == session['user_id']).all()
+            if skills:
+                return [s.to_dict() for s in skills], 200
+            return {'error': 'No skills found'}, 404
+        return {'error': 'Unauthorized'}, 401
+    
+    def post(self):
+        if check_session():
+            try:
+                new_skill = Skill(
+                    title = request.get_json()['title'],
+                    image = request.get_json()['image'],
+                    user_id = session['user_id'],
+                )
+                db.session.add(new_skill)
+                db.session.commit()
+                return new_skill.to_dict(), 201
+            except IntegrityError: 
+                return {'error': 'Could not create skill'}
+            
+class SkillById(Resource):
 
+    def get(self, id):
+        if check_session():
+            skill = Skill.query.filter(Skill.id == id).first()
+            if skill:
+                return skill.to_dict(), 200
+            return {'error': 'The requested skill could not be located'}, 404
+        return {'error': 'Unauthorized'}, 401
+    
+    def delete(self, id):
+        if check_session():
+            skill = Skill.query.filter(Skill.id == id).first()
+            if skill: 
+                db.session.delete(skill)
+                db.session.commit()
+                return {'Message': 'Skill deleted'}, 204
+            return {'error': 'The requested skill could not be located'}, 404
+        return {'error': 'Unauthorized'}, 401
+                
 
 # user routes
 api.add_resource(Signup, '/signup', endpoint='signup')
 api.add_resource(CheckSession, '/check_session', endpoint='check_session')
 api.add_resource(Login, '/login', endpoint='login')
 api.add_resource(Logout, '/logout', endpoint='logout')
+api.add_resource(UserById, '/user/<int:id>')
 
 # project routes
 api.add_resource(Projects, '/project', endpoint='project')
 api.add_resource(ProjectById, '/project/<int:id>')
 
+# skill routes
+api.add_resource(Skills, '/skill', endpoint='skill')
+api.add_resource(SkillById, '/skill/<int:id>')
+
 if __name__ == '__main__':
-  app.run(port=5555, debug=True)
+    app.run(port=5555, debug=True)
