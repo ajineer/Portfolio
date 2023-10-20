@@ -1,15 +1,13 @@
 from sqlalchemy_serializer import SerializerMixin
-from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.orm import validates
 from sqlalchemy.ext.hybrid import hybrid_property
 from config import db, bcrypt
-from datetime import datetime
 
 class User(db.Model, SerializerMixin):
 
     __tablename__ = 'users'
 
-    serialize_rules = ('-_password_hash',)
+    serialize_rules = ('-_password_hash', '-projects', '-skills')
 
     id = db.Column(db.Integer, primary_key = True)
     username = db.Column(db.String, nullable=False)
@@ -45,3 +43,34 @@ class User(db.Model, SerializerMixin):
         if '@' not in email or not email:
            raise ValueError('Must provide email and be in the form of johnSMith@email.com')
         return email 
+    
+class Project(db.Model, SerializerMixin):
+    
+    __tablename__ = 'projects'
+
+    serialize_rules = ('-user',)
+
+    id = db.Column(db.Integer, primary_key=True)
+    image = db.Column(db.String, nullable=False)
+    name = db.Column(db.String, nullable=False)
+    description = db.Column(db.String, nullable=False)
+    start_date = db.Column(db.String, nullable=False)
+    finish_date = db.Column(db.String, nullable=False)
+    github = db.Column(db.String, nullable=False)
+    demo = db.Column(db.String, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+    user = db.relationship('User', back_populates='projects')
+
+class Skill(db.Model, SerializerMixin):
+
+    __tablename__ = 'skills'
+
+    serialize_rules = ('-user',)
+
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String, nullable=False)
+    image = db.Column(db.String, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+    user = db.relationship('User', back_populates='skills')
