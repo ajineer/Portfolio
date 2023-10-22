@@ -1,8 +1,9 @@
-from flask import request, session
+from flask import request, session, send_file
 from flask_restful import Resource
 from sqlalchemy.exc import IntegrityError
 from config import app, db, api
 from models import User, Project, Skill
+from io import BytesIO
 
 @app.route('/')
 def index():
@@ -76,19 +77,19 @@ class Logout(Resource):
 class Projects(Resource):
 
     def get(self):
-        if check_session():
-            projects = Project.query.filter(Project.user_id == session['user_id']).all()
-            if(projects):
-               return [p.to_dict(rules=('-user',)) for p in projects], 200
-            return {'error': 'No projects found'}, 404
-        return {'error': 'Unauthorized'}, 401
+        projects = Project.query.all()
+        if(projects):
+            return [p.to_dict(rules=('-user',)) for p in projects], 200
+        return {'error': 'No projects found'}, 404
 
     def post(self):
         if check_session():
+            file = request.files['image']
             try: 
                 new_project = Project(
                     user_id = session.get('user_id'),
-                    image = request.get_json()['image'],
+                    image = file.filename,
+                    data = file.read(),
                     name = request.get_json()['name'],
                     description = request.get_json()['description'],
                     start_date = request.get_json()['start_date'],
@@ -195,7 +196,7 @@ api.add_resource(Signup, '/signup', endpoint='signup')
 api.add_resource(CheckSession, '/check_session', endpoint='check_session')
 api.add_resource(Login, '/login', endpoint='login')
 api.add_resource(Logout, '/logout', endpoint='logout')
-# api.add_resource(UserById, '/user/<int:id>')
+api.add_resource(UserById, '/user/<int:id>')
 
 # project routes
 api.add_resource(Projects, '/project', endpoint='project')

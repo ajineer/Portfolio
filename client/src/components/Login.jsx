@@ -1,7 +1,7 @@
 import { useState } from "react"
 import useStore from '../store'
 
-function Login(){
+function Login({setShow}){
 
     const {user, setUser, projects, setProjects, skills, setSkills} = useStore()
     const [formData, setFormData] = useState({
@@ -55,6 +55,7 @@ function Login(){
                 type="Submit"
                 onSubmit={()=>handleSubmit()}>
             </input>
+            <button onClick={() => setShow(false)}>X</button>
         </form>
     )
 }

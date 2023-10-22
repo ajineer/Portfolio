@@ -59,7 +59,8 @@ class Project(db.Model, SerializerMixin):
     serialize_rules = ('-user',)
 
     id = db.Column(db.Integer, primary_key=True)
-    image = db.Column(db.String, nullable=False)
+    image = db.Column(db.String(50), nullable=False)
+    data = db.Column(db.LargeBinary, nullable=False)
     name = db.Column(db.String, nullable=False)
     description = db.Column(db.String, nullable=False)
     start_date = db.Column(db.String, nullable=False)
