@@ -12,6 +12,9 @@ export default {
         "accent1":"#204EF5",
         "accent2":"#43485C",
         "accent3":"#2C2E33"
+      },
+      backgroundImage:{
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))'
       }
     },
   },

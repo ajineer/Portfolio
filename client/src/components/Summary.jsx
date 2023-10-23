@@ -1,17 +1,17 @@
 function Summary(){
     return (
         <div className="flex flex-col">
-            <h1>Mark Pierce</h1>
+            <h1 className="text-6xl">Mark Pierce</h1>
             <div className="flex">
-                <img width='3%' height='3%' src='../../public/Javascript.png'/>
-                <img width='3%' height='3%' src='../../public/React.png'/>
-                <img width='3%' height='3%' src='../../public/Tailwind.png'/>
-                <img width='3%' height='3%' src='../../public/Python.jpeg'/>
-                <img width='3%' height='3%' src='../../public/Flask.png'/>
-                <img width='3%' height='3%' src='../../public/JSON.jpeg'/>
-                <img width='3%' height='3%' src='../../public/github.png'/>
+                <img width='10%' height='10%' src='../../public/Javascript.png'/>
+                <img width='10%' height='10%' src='../../public/React.png'/>
+                <img width='10%' height='10%' src='../../public/Tailwind.png'/>
+                <img width='10%' height='10%' src='../../public/Python.jpeg'/>
+                <img width='10%' height='10%' src='../../public/Flask.png'/>
+                <img width='10%' height='10%' src='../../public/JSON.jpeg'/>
+                <img width='10%' height='10%' src='../../public/github.png'/>
             </div>
-            <p className="w-[40%]">
+            <p className="w-[60ch]">
                 I am a Full stack Web Developer, Recently graduated from Flatiron School. 
                 I have been trained in Javascript, React.js, and Python with Flask and OOP. 
                 I also possess a strong Mathematics background, Calculus I, II, and III, Pure Mathematics, 
