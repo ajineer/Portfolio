@@ -1,12 +1,15 @@
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import Summary from './components/Summary'
 import Project from './components/Project'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
 
+  const [loaded, setLoaded] = useState(false)
+
   const projects = [
     {
+      id: 1,
       name: 'Task Master',
       date_started: 'June, 2023',
       date_finished: 'October, 2023',
@@ -22,6 +25,7 @@ function App() {
         ]
     },
     {
+      id: 2,
       name: 'Prackr',
       date_started: 'July, 2023',
       date_finished: 'October, 2023',
@@ -37,6 +41,7 @@ function App() {
         ]
     },
     {
+      id: 3,
       name: 'Planly',
       date_started: 'September, 2023',
       date_finished: 'October, 2023',
@@ -53,6 +58,10 @@ function App() {
     },
   ]
 
+  useEffect(()=>{
+    setLoaded(true)
+  },[])
+
   return (
     
     <main className='flex flex-col bg-gradient-radial from-primary to-secondary h-screen'>
@@ -62,9 +71,10 @@ function App() {
           <img width='100%' height='100%' src='../../public/profile_picture.jpeg'/>
         </div>
       </section>
+      <span>My projects</span>
       <section className={`grid grid-cols-3 grid-template-rows-[${projects.length%3}] mt-auto mb-[5%]`}>
-        {projects.length > 0 && projects.map(proj => 
-          <Project key={proj.id} proj={proj}/>)}
+        {projects.length > 0 && projects.map((proj) => 
+          <Project key={proj.id} proj={proj} loaded={loaded}/>)}
       </section>
     </main>
   )
