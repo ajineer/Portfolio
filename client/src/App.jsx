@@ -7,15 +7,6 @@ import Profile from './components/Profile'
 
 function App() {
 
-  const [loaded, setLoaded] = useState(false)
-
-  useEffect(()=>{
-    let delay = 500
-    setTimeout(()=>{
-      setLoaded(true)
-    }, delay)
-  },[])
-
   return (
     
     <main className='flex flex-col bg-gradient-radial from-accent1 to-primary h-screen'>

@@ -1,29 +1,30 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useMemo} from 'react'
+import Circle from './Circle'
 
 function Profile(){
     
     const techURL = [
-        '../../public/Javascript.png',
-        '../../public/React.png',
-        '../../public/Tailwind.png',
-        '../../public/Python.jpeg',
-        '../../public/Flask.png',
-        '../../public/JSON.jpeg',
-        '../../public/github.png',]
-
-    const [loaded, setLoaded] = useState(false)
-    useEffect(()=>{
-        setTimeout(()=>{
-            setLoaded(true)
-        },500)
-    },[])
-    
+        '/Javascript.png',
+        '/React.png',
+        '/Tailwind.png',
+        '/Python.jpeg', 
+        '/Flask.png',  
+        '/JSON.jpeg',  
+        '/github.png', 
+        '/CSS.png',       
+        '/HTML.png'
+    ]
     
     return(
         <div className="flex items-center justify-center rounded-full border-2 border-Yellow-500 w-[300px] h-[300px] m-auto">
-            <div>
-                <img className='rounded-full' width={'90%'} height={'100%'} src='../../public/profile_picture.jpeg'/>
+            <div className='z-10 absolute flex overflow-clip items-center border-2 border-white rounded-full h-[190px] w-[190px]'>
+                <img className='h-full w-full' src='../../public/profile_picture.jpeg'/>
             </div>
+            {techURL.map((url, idx) => {
+                return (
+                    <Circle key={idx} url={url} idx={idx} />
+                )
+            })}
         </div>
     )
 }
