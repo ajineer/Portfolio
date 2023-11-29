@@ -1,4 +1,3 @@
-import {useState, useEffect, useMemo} from 'react'
 import Circle from './Circle'
 
 function Profile(){
@@ -16,7 +15,7 @@ function Profile(){
     ]
     
     return(
-        <div className="flex items-center justify-center rounded-full border-2 border-Yellow-500 w-[300px] h-[300px] m-auto">
+        <div className="flex items-center justify-center rounded-full w-[300px] h-[300px] m-auto">
             <div className='z-10 absolute flex overflow-clip items-center border-2 border-white rounded-full h-[190px] w-[190px]'>
                 <img className='h-full w-full' src='../../public/profile_picture.jpeg'/>
             </div>
