@@ -1,4 +1,5 @@
 import Circle from './Circle'
+import { motion } from 'framer-motion'
 
 function Profile(){
     
@@ -21,7 +22,18 @@ function Profile(){
             </div>
             {techURL.map((url, idx) => {
                 return (
-                    <Circle key={idx} url={url} idx={idx} />
+                    // <Circle key={idx} url={url} idx={idx} />
+                    <motion.div key={idx} className='flex z-0 bg-opacity-0 absolute items-center w-[260px] h-[260px] rounded-full'
+                        initial={{rotate: 0, opacity: 0}}
+                        animate={{rotate: -12*idx, opacity: 1}}
+                        transition={{duration: 0.5, delay: (idx+1)*0.5}}
+                    >
+                        <motion.img className='z-10 rounded-full' width={'23px'} height={'23px'} src={url}
+                            initial={{rotate: 0}}
+                            animate={{rotate: 12*idx}}
+                            transition={{duration: 0.5, delay: (idx+1)*0.5}}
+                        />
+                    </motion.div>
                 )
             })}
         </div>
