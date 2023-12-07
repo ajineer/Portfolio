@@ -27,8 +27,8 @@ function App() {
       </section>
       <h2 className='text-4xl'>My Projects</h2>
       <section className={`grid grid-cols-3 grid-template-rows-[${projects.length%3}] mt-auto mb-[5%] gap-1`}>
-        {projects.length > 0 && projects.map((proj) => 
-          <Project key={proj.id} proj={proj}/>)}
+        {projects.length > 0 && projects.map((proj, idx) => 
+          <Project key={proj.id} proj={proj} idx={idx}/>)}
       </section>
     </main>
   )

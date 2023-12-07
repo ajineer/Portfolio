@@ -1,10 +1,19 @@
 import classNames from 'classnames'
 import { motion } from 'framer-motion'
+import { useEffect } from 'react'
 
-function Project({proj, id}){
+function Project({proj, idx}){
+
+    useEffect(()=>{
+        console.log("key: ", idx)
+    },[])
 
     return (
-        <section className={`border-black border-2 bg-gradient-radial from-secondary to-accent3`}>
+        <motion.section className={`border-black border-2 bg-gradient-radial from-secondary to-accent3`}
+            initial={{translateX: 1000}}
+            animate={{translateX: 0}}
+            transition={{duration: 0.5, delay: 0.5*(idx+1)}}
+        >
             <span>
                 {proj.name}
             </span>
@@ -16,7 +25,7 @@ function Project({proj, id}){
                 <img width='10%' height='10%' key={idx} src={url}/>
                 )}
             </div>
-        </section>
+        </motion.section>
     )
 }
 
