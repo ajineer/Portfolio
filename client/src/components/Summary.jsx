@@ -25,7 +25,7 @@ function Summary(){
                     )}
                 </span>
             </h1>
-            <p className={`w-[40ch] border-2 border-orange-500 ml-[0.20%]`}>
+            <p className={`w-[90%] border-2 border-orange-500 ml-[0.20%]`}>
                 I am a Full stack Web Developer, Recently graduated from Flatiron School. 
                 I have been trained in Javascript, React.js, and Python with Flask and OOP. 
                 I also possess a strong Mathematics background, Calculus I, II, and III, Pure Mathematics, 
