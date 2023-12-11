@@ -4,10 +4,6 @@ import { useEffect } from 'react'
 
 function Project({proj, idx}){
 
-    useEffect(()=>{
-        console.log("key: ", idx)
-    },[])
-
     return (
         <motion.section className={`border-black border-2 bg-gradient-radial from-secondary to-accent3`}
             initial={{translateX: 1000}}

@@ -1,4 +1,6 @@
-const projects = [
+const data = {
+  
+    projects: [
     {
       id: 1,
       name: 'Task Master',
@@ -47,6 +49,18 @@ const projects = [
         '../../public/Python.jpeg',
         ]
     },
-  ]
+  ],
+  summary: "I am a Full stack Web Developer, Recently graduated from Flatiron School. I have been trained in Javascript, React.js, and Python with Flask and OOP. I also possess a strong Mathematics background, Calculus I, II, and III, Pure Mathematics, Differential Equations, Linear Algebra. Currently I tutor algebra, trigonometry, and calculus across all grades and ages. I am also a disc-golf enthusiast and puzzle cube collector.",
+  techURL: ['/Javascript.png',
+  '/React.png',
+  '/Tailwind.png',
+  '/Python.jpeg', 
+  '/Flask.png',  
+  '/JSON.jpeg',  
+  '/github.png', 
+  '/CSS.png',       
+  '/HTML.png'],
+  profile: '../public/profile_picture.jpeg'
+}
 
-export default projects
+export default data
