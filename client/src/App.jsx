@@ -3,6 +3,7 @@ import data from './projectStore';
 import Profile from './components/Profile';
 import Summary from './components/Summary';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 function App() {
   const colors = ['bg-primary', 'bg-secondary', 'bg-accent1', 'bg-accent2', 'bg-accent3'];
@@ -65,25 +66,33 @@ function App() {
       {/* Projects */}
       {data.projects.map((proj, idx) => {
         return (
-        <motion.section 
-          onClick={() => console.log("clicked!")}
-          className={`border-black border-2 bg-gradient-radial from-secondary to-accent3 md:row-start-2 md:col-start-${idx+1} sm:row-start-${idx+2}`}
+          <motion.section 
+          className={`border-black border-2 bg-gradient-radial from-secondary to-accent3 md:row-start-2 md:col-start-${idx+1} sm:row-start-${idx+2} hover:border-8 hover:border-blue-200`}
           initial={{translateX: 1000}}
           animate={{translateX: 0}}
           transition={{duration: 0.5, delay: 0.5*(idx+1)}}
-        >
-          <span>
-            {proj.name}
-          </span>
-          <svg className='border-red-500 border-2'>
-            <image width='100%' height='100%' href={proj.image}/>
-          </svg>
-          <div className='flex flex-row'>
-            {proj.stack.map((url, idx) =>
-            <img width='10%' height='10%' key={idx} src={url}/>
-            )}
-          </div>
-        </motion.section>
+          >
+            <Project proj={proj} key={idx} />
+          </motion.section>
+          // <motion.section 
+        //   key={idx}
+        //   className={`border-black border-2 bg-gradient-radial from-secondary to-accent3 md:row-start-2 md:col-start-${idx+1} sm:row-start-${idx+2}`}
+        //   initial={{translateX: 1000}}
+        //   animate={{translateX: 0}}
+        //   transition={{duration: 0.5, delay: 0.5*(idx+1)}}
+        // >
+        //   <span>
+        //     {proj.name}
+        //   </span>
+        //   <svg className='border-red-500 border-2'>
+        //     <image width='100%' height='100%' href={proj.image}/>
+        //   </svg>
+        //   <div className='flex flex-row'>
+        //     {proj.stack.map((url, idx) =>
+        //     <img width='10%' height='10%' key={idx} src={url}/>
+        //     )}
+        //   </div>
+        // </motion.section>
       )})}
     </main>
   );
