@@ -60,7 +60,8 @@ const data = {
   '/github.png', 
   '/CSS.png',       
   '/HTML.png'],
-  profile: '../public/profile_picture.jpeg'
+  profile: '../public/profile_picture.jpeg',
+  links: ['https://www.linkedin.com/in/mark-pierce-410326100/', 'https://github.com/ajineer', 'https://medium.com/@ajineer']
 }
 
 export default data

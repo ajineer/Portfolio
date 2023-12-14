@@ -1,6 +1,7 @@
 import data from '../projectStore';
 import { motion } from 'framer-motion';
 import Project from './Project'
+import { SocialIcon } from 'react-social-icons';
 
 function Home() {
   const colors = ['bg-primary', 'bg-secondary', 'bg-accent1', 'bg-accent2', 'bg-accent3'];
@@ -18,6 +19,9 @@ function Home() {
       </div> */}
       {/* Name and summary*/}
       <section className='m-[1rem] md:col-span-2 mt-auto mb-[2rem] md:row-start-1 md:col-start-1 sm:row-start-2'>
+        <SocialIcon url={data.links[0]}/>
+        <SocialIcon url={data.links[1]}/>
+        <SocialIcon url={data.links[2]}/>
         <h1 className={`flex p-2 ml-[0.20%] text-2xl w-[100%]`}>
           <span className="flex w-[100%]">
               <motion.span 
@@ -36,7 +40,10 @@ function Home() {
               )}
           </span>
         </h1>
-        {data.summary}
+        <p className='border-2 border-red-600'>
+          {data.summary}
+        </p>
+        
       </section>
 
       {/* Profile picture */}
