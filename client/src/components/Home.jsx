@@ -71,11 +71,11 @@ function Home() {
       {data.projects.map((proj, idx) => {
         return (
           <motion.section 
-          key={proj.id}
-          className={`border-black border-2 bg-gradient-radial from-secondary to-accent3 md:row-start-2 md:col-start-${idx+1} sm:row-start-${idx+2} hover:border-8 hover:border-blue-200`}
-          initial={{translateX: 1000}}
-          animate={{translateX: 0}}
-          transition={{duration: 0.5, delay: 0.5*(idx+1)}}
+            key={proj.id}
+            className={`h-fit mt-auto mb-auto border-black border-2 bg-gradient-radial from-secondary to-accent3 md:row-start-2 md:col-start-${idx+1} sm:row-start-${idx+2} hover:border-8 hover:border-blue-200`}
+            initial={{translateX: 1250}}
+            animate={{translateX: 0}}
+            transition={{duration: 0.5, delay: 0.5*(idx+1)}}
           >
             <Project proj={proj}/>
           </motion.section>

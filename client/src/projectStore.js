@@ -8,6 +8,7 @@ const data = {
       date_finished: 'October, 2023',
       description: 'A user-friendly to-do list tracker for efficient task management.',
       image: '../../public/TaskMasterimage.png',
+      youtube: 'DqRZbit4Yfw',
       github: 'https://github.com/ajineer/phase-1-project',
       demo: 'https://youtu.be/DqRZbit4Yfw',
       stack: [
@@ -24,6 +25,7 @@ const data = {
       date_finished: 'October, 2023',
       description: 'helps users track their pantry items and create gorcery lists.',
       image: '../../public/Prackrimage.png',
+      youtube: 'M2iw366dyro',
       github: 'https://github.com/ajineer/Phase-2-Project',
       demo: 'https://youtu.be/M2iw366dyro',
       stack: [
@@ -40,6 +42,7 @@ const data = {
       date_finished: 'October, 2023',
       description: 'An app that tracks and schedules a users events with an interactive calendar and to-do lists.',
       image: '../../public/Planlyimage.png',
+      youtube: 'p5V-HUNbyqU',
       github: 'https://github.com/ajineer/phase-5-project',
       demo: 'https://youtu.be/p5V-HUNbyqU',
       stack: [

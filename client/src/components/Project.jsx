@@ -8,7 +8,6 @@ function Project({proj}){
   const navigate = useNavigate()
 
   function Nav(id){
-    console.log(typeof id)
     navigate(`/project_${id}`)
   }
 
@@ -20,11 +19,11 @@ function Project({proj}){
         <svg className='border-red-500 border-2'>
           <image width='100%' height='100%' href={proj.image}/>
         </svg>
-        <div className='flex flex-row'>
+        {/* <div className='flex flex-row'>
           {proj.stack.map((url, idx) =>
           <img width='10%' height='10%' key={idx} src={url}/>
           )}
-        </div>
+        </div> */}
       </section>
   )
 }
