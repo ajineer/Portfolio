@@ -32,13 +32,13 @@ import YouTube from "react-youtube"
 
 function ProjectPage({ proj }) {
   return (
-    <section className='bg-gradient-radial from-accent1 to-accent2'>
+    <section className='bg-gradient-radial from-accent1 to-accent2 h-screen'>
       <div className='project-details'>
         <h1>{proj.name}</h1>
         <p>{proj.description}</p>
         <YouTube videoId={proj.youtube}/>
       </div>
-      <div className='tech-stack'>
+      <div className='flex tech-stack'>
         {proj.stack.map((tech, idx) => (
           <motion.img
             key={idx}
