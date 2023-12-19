@@ -66,7 +66,7 @@ const data = {
   './images/github.png', 
   './images/CSS.png',       
   './images/HTML.png'],
-  profile: './images/profile_picture.jpeg',
+  profile: 'images/profile_picture.jpeg',
   links: ['https://www.linkedin.com/in/mark-pierce-410326100/', 'https://github.com/ajineer', 'https://medium.com/@ajineer']
 }
 
