@@ -40,7 +40,8 @@ function ProjectPage({ proj }) {
         <YouTube videoId={proj.youtube}/>
       </div>
       <div className='flex tech-stack'>
-        {proj.stack.map((tech, idx) => (
+        {proj.stack.map((tech, idx) => {
+          return (
           <motion.img
             key={idx}
             src={tech}
@@ -48,8 +49,8 @@ function ProjectPage({ proj }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 * (idx + 1) }}
-          />
-        ))}
+          />)
+        })}
       </div>
     </section>
   );
