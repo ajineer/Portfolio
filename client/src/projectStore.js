@@ -31,10 +31,10 @@ const data = {
       github: 'https://github.com/ajineer/Phase-2-Project',
       demo: 'https://youtu.be/M2iw366dyro',
       stack: [
-        '../../public/Javascript.png',
-        '../../public/React.png',
-        '../../public/Tailwind.png',
-        '../../public/JSON.jpeg',
+        '/Javascript.png',
+        '/React.png',
+        '/Tailwind.png',
+        '/JSON.jpeg',
         ]
     },
     {
