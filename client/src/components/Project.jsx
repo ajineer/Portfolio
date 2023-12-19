@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import React from 'react'
 
 function Project({proj}){
 

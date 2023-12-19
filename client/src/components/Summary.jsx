@@ -1,6 +1,7 @@
 import Profile from "./Profile"
 import { motion } from "framer-motion"
 import data from "../projectStore"
+import React from "react"
 
 function Summary(){
 

@@ -2,6 +2,7 @@ import data from '../projectStore';
 import { motion } from 'framer-motion';
 import Project from './Project'
 import { SocialIcon } from 'react-social-icons';
+import React from 'react';
 
 function Home() {
   const colors = ['bg-primary', 'bg-secondary', 'bg-accent1', 'bg-accent2', 'bg-accent3'];

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import YouTube from "react-youtube"
+import React from 'react';
 
 
 // function ProjectPage({proj}){

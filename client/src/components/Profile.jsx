@@ -1,5 +1,6 @@
 import Circle from './Circle'
 import { motion } from 'framer-motion'
+import React from 'react'
 
 function Profile(){
     
