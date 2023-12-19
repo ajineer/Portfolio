@@ -11,7 +11,7 @@ function App() {
 
   return (
     <Routes>
-      <Route exact path="/" element={<Home />}/>
+      <Route exact path="/Portfolio" element={<Home />}/>
       {data.projects.map(((proj) => {
         return (
           <Route key={proj.id} path={`/project_${proj.id}`} element={<ProjectPage proj={proj}/>}/>
