@@ -22,7 +22,7 @@ function Home() {
       <section className='m-[1rem] md:col-span-2 mt-auto mb-[2rem] md:row-start-1 md:col-start-1 sm:row-start-2'>
         {data.links.map((link, idx) => {
           return (
-            <SocialIcon url={link}/>
+            <SocialIcon key={idx} url={link}/>
           )
         })}
         <h1 className={`flex p-2 ml-[0.20%] text-2xl w-[100%]`}>
