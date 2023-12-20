@@ -1,15 +1,10 @@
 import classNames from 'classnames'
-import { motion } from 'framer-motion'
-import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
 import React from 'react'
 
 function Project({proj}){
 
-  const navigate = useNavigate()
-
   function Nav(id){
-    navigate(`/project_${id}`)
+    return 1
   }
 
   return (

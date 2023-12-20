@@ -10,14 +10,7 @@ function App() {
   const lastName = ['P', 'i', 'e', 'r', 'c', 'e']  
 
   return (
-    <Routes>
-      <Route exact path="/Portfolio" element={<Home />}/>
-      {data.projects.map(((proj) => {
-        return (
-          <Route key={proj.id} path={`/project_${proj.id}`} element={<ProjectPage proj={proj}/>}/>
-        )
-      }))}
-    </Routes>
+    <Home/>
   );
 }
 
