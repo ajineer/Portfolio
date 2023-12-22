@@ -9,7 +9,7 @@ function Project({proj}){
 
   return (
       <section className='flex flex-col justify-center items-center' onClick={() => Nav(proj.id)}>
-          <svg classname='w-[80%] h-[40%]'>
+          <svg className='w-[80%] h-[40%]'>
             <image height='100%' width='100%' href={proj.image}/>
           </svg>
         <span className='text-xl font-bold mt-2'>
