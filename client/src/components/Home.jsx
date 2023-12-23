@@ -9,40 +9,55 @@ import { Link } from 'react-scroll'
 function Home() {
   const colors = ['bg-primary', 'bg-secondary', 'bg-accent1', 'bg-accent2', 'bg-accent3'];
   const lastName = ['P', 'i', 'e', 'r', 'c', 'e']
+  const links = [
+    {
+      link:'top',
+      text:'Home'
+    }, 
+    {
+      link: 'Project_1',
+      text: 'Project 1'
+    }, 
+    {
+      link: 'Project_2',
+      text: 'Project 2'
+    
+    }, 
+    {
+      link: 'Project_3',
+      text: 'Project 3'
+    }
+  ]
 
   return (
     <main className='flex flex-col items-center justify-center bg-gradient-radial from-accent1 to-accent2'>
       
-      {/* color pallette*/}
-      {/* <div className='absolute flex w-fit h-[1ch]'>
-      {colors.map((color ,idx)=>
-        <div key={idx} className={`${color}`}>
-          {color}
-        </div>
-      )}
-      </div> */}
       {/* Navigation */}
-      <nav className='flex border-2 sticky top-0 w-screen'>
-        <Link
-          to='top'
-          spy={true} smooth={true} offset={50} duration={500} 
-        >Home</Link>
-        <Link
-          to='Project_1'
-          spy={true} smooth={true} offset={50} duration={500} 
-        >Project 1</Link>
-        <Link
-          to='Project_2'
-          spy={true} smooth={true} offset={50} duration={500} 
-        >Project 2</Link>
-        <Link
-          to='Project_3'
-          spy={true} smooth={true} offset={50} duration={500} 
-        >Project 3</Link>
+      <nav className='flex sticky top-0 bg-secondary z-30'>
+        {links.map(link => {return (
+          <Link
+          className='text-md border-2 border-black h-[100%] w-fit hover:bg-primary'
+          to={link.link}
+          spy={true} smooth={true} offset={0} duration={500} 
+          >
+            <span className='p-2'>
+              {link.text}
+            </span>
+          </Link>
+        )})}
       </nav>
 
+       {/* color pallette*/}
+      <div className='flex w-fit h-[1ch]'>
+        {colors.map((color ,idx)=>
+          <div key={idx} className={`${color}`}>
+            {color}
+          </div>
+        )}
+      </div>
+
       {/* Name, summary and links*/}
-      <section id='top' className='mt-auto mb-[2rem]'>
+      <section id='top' className='h-screen'>
         <h1 className={`flex p-2 ml-[0.20%] text-3xl w-[100%]`}>
           <span className="flex w-[100%] font-bold">
               <motion.span 
@@ -69,34 +84,34 @@ function Home() {
         <p className='bg-primary p-2 rounded-md border-2 border-black'>
           {data.summary}
         </p>
-        
+        {/* Profile picture */}
+      <div className="flex items-center justify-center rounded-full w-[300px] h-[300px] m-auto">
+          <div className='absolute z-0 h-[290px] w-[290px] bg-gradient-radial from-primary to-accent3 rounded-full border-2 border-black'>
+          </div>
+          <div className='z-20 absolute flex overflow-clip items-center rounded-full h-[190px] w-[190px]'>
+              <img className='h-full w-full' src={data.profile}/>
+          </div>
+          {data.techURL.map((url, idx) => {
+              return (
+                  <motion.div key={idx} className='flex z-10 bg-opacity-0 absolute items-center w-[260px] h-[260px] rounded-full'
+                      initial={{rotate: 0, opacity: 0}}
+                      animate={{rotate: -12*idx, opacity: 1}}
+                      transition={{duration: 0.5, delay: (idx+1)*0.5}}
+                  >
+                      <motion.img className='z-10 rounded-full' width={'23px'} height={'23px'} src={url}
+                          initial={{rotate: 0}}
+                          animate={{rotate: 12*idx}}
+                          transition={{duration: 0.5, delay: (idx+1)*0.5}}
+                      />
+                  </motion.div>
+              )
+          })}
+        </div>
       </section>
 
-      {/* Profile picture */}
-      <div className="flex items-center justify-center rounded-full w-[300px] h-[300px] m-auto">
-            <div className='absolute z-0 h-[290px] w-[290px] bg-gradient-radial from-primary to-accent3 rounded-full border-2 border-black'>
-            </div>
-            <div className='z-20 absolute flex overflow-clip items-center rounded-full h-[190px] w-[190px]'>
-                <img className='h-full w-full' src={data.profile}/>
-            </div>
-            {data.techURL.map((url, idx) => {
-                return (
-                    <motion.div key={idx} className='flex z-10 bg-opacity-0 absolute items-center w-[260px] h-[260px] rounded-full'
-                        initial={{rotate: 0, opacity: 0}}
-                        animate={{rotate: -12*idx, opacity: 1}}
-                        transition={{duration: 0.5, delay: (idx+1)*0.5}}
-                    >
-                        <motion.img className='z-10 rounded-full' width={'23px'} height={'23px'} src={url}
-                            initial={{rotate: 0}}
-                            animate={{rotate: 12*idx}}
-                            transition={{duration: 0.5, delay: (idx+1)*0.5}}
-                        />
-                    </motion.div>
-                )
-            })}
-        </div>
+      
       {/* Project cards */}
-      <section className='flex space-x-4 ml-auto mr-auto'>
+      {/* <section className='flex space-x-4 ml-auto mr-auto'>
         {data.projects.map((proj, idx) => {
           return (
             <motion.section 
@@ -114,7 +129,7 @@ function Home() {
               >Check it out</Link>
             </motion.section>
         )})}
-      </section>
+      </section> */}
       {/*Project pages */}
       {data.projects.map((proj, idx) => {
         return (
