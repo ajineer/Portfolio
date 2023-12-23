@@ -11,7 +11,7 @@ function Home() {
   const lastName = ['P', 'i', 'e', 'r', 'c', 'e']
 
   return (
-    <main className='grid p-4 bg-gradient-radial from-accent1 to-accent2 gap-2'>
+    <main className='flex flex-col items-center justify-center bg-gradient-radial from-accent1 to-accent2'>
       
       {/* color pallette*/}
       {/* <div className='absolute flex w-fit h-[1ch]'>
@@ -21,9 +21,28 @@ function Home() {
         </div>
       )}
       </div> */}
+      {/* Navigation */}
+      <nav className='flex border-2 sticky top-0 w-screen'>
+        <Link
+          to='top'
+          spy={true} smooth={true} offset={50} duration={500} 
+        >Home</Link>
+        <Link
+          to='Project_1'
+          spy={true} smooth={true} offset={50} duration={500} 
+        >Project 1</Link>
+        <Link
+          to='Project_2'
+          spy={true} smooth={true} offset={50} duration={500} 
+        >Project 2</Link>
+        <Link
+          to='Project_3'
+          spy={true} smooth={true} offset={50} duration={500} 
+        >Project 3</Link>
+      </nav>
 
       {/* Name, summary and links*/}
-      <section className='m-[1rem] mt-auto mb-[2rem]'>
+      <section id='top' className='mt-auto mb-[2rem]'>
         <h1 className={`flex p-2 ml-[0.20%] text-3xl w-[100%]`}>
           <span className="flex w-[100%] font-bold">
               <motion.span 
@@ -104,7 +123,6 @@ function Home() {
           </section>
         )
       })}
-      
     </main>
   );
 }
