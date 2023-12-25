@@ -1,51 +1,25 @@
 import data from '../projectStore';
 import { motion } from 'framer-motion';
 import Project from './Project'
+import Profile from './Profile';
 import { SocialIcon } from 'react-social-icons';
 import React from 'react';
 import ProjectPage from './ProjectPage';
 import { Link } from 'react-scroll'
+import Nav from './Nav';
 
 function Home() {
   const colors = ['bg-primary', 'bg-secondary', 'bg-accent1', 'bg-accent2', 'bg-accent3'];
   const lastName = ['P', 'i', 'e', 'r', 'c', 'e']
-  const links = [
-    {
-      link:'top',
-      text:'Home'
-    }, 
-    {
-      link: 'Project_1',
-      text: 'Project 1'
-    }, 
-    {
-      link: 'Project_2',
-      text: 'Project 2'
-    
-    }, 
-    {
-      link: 'Project_3',
-      text: 'Project 3'
-    }
-  ]
 
   return (
     <main className='flex flex-col items-center justify-center bg-gradient-radial from-accent1 to-accent2'>
-      
-      {/* Navigation */}
-      <nav className='flex sticky top-0 bg-secondary z-30'>
-        {links.map(link => {return (
-          <Link
-          className='text-md border-2 border-black h-[100%] w-fit hover:bg-primary'
-          to={link.link}
-          spy={true} smooth={true} offset={0} duration={500} 
-          >
-            <span className='p-2'>
-              {link.text}
-            </span>
-          </Link>
-        )})}
-      </nav>
+      <section className='flex w-screen justify-center items-center border-2 border-red-500 sticky top-0'>
+        {/* Navigation */}
+        <Nav/>
+        {/* Profile picture */}
+        <Profile />
+      </section>
 
        {/* color pallette*/}
       <div className='flex w-fit h-[1ch]'>
@@ -84,29 +58,7 @@ function Home() {
         <p className='bg-primary p-2 rounded-md border-2 border-black'>
           {data.summary}
         </p>
-        {/* Profile picture */}
-      <div className="flex items-center justify-center rounded-full w-[300px] h-[300px] m-auto">
-          <div className='absolute z-0 h-[290px] w-[290px] bg-gradient-radial from-primary to-accent3 rounded-full border-2 border-black'>
-          </div>
-          <div className='z-20 absolute flex overflow-clip items-center rounded-full h-[190px] w-[190px]'>
-              <img className='h-full w-full' src={data.profile}/>
-          </div>
-          {data.techURL.map((url, idx) => {
-              return (
-                  <motion.div key={idx} className='flex z-10 bg-opacity-0 absolute items-center w-[260px] h-[260px] rounded-full'
-                      initial={{rotate: 0, opacity: 0}}
-                      animate={{rotate: -12*idx, opacity: 1}}
-                      transition={{duration: 0.5, delay: (idx+1)*0.5}}
-                  >
-                      <motion.img className='z-10 rounded-full' width={'23px'} height={'23px'} src={url}
-                          initial={{rotate: 0}}
-                          animate={{rotate: 12*idx}}
-                          transition={{duration: 0.5, delay: (idx+1)*0.5}}
-                      />
-                  </motion.div>
-              )
-          })}
-        </div>
+        
       </section>
 
       

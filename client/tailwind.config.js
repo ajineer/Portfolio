@@ -15,6 +15,13 @@ export default {
       },
       backgroundImage:{
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))'
+      },
+      width:{
+        '97p': '97%',
+        '63p': '63%',
+        '87p': '87%',
+        '9p': '9%',
+
       }
     },
   },

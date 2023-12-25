@@ -69,7 +69,26 @@ const data = {
       './images/HTML.png'
     ],
   profile: 'images/profile_picture.jpeg',
-  links: ['https://www.linkedin.com/in/mark-pierce-410326100/', 'https://github.com/ajineer', 'https://medium.com/@ajineer']
+  links: ['https://www.linkedin.com/in/mark-pierce-410326100/', 'https://github.com/ajineer', 'https://medium.com/@ajineer'],
+  pageLinks: [
+    {
+      link:'top',
+      text:'Home'
+    }, 
+    {
+      link: 'Project_1',
+      text: 'Project 1'
+    }, 
+    {
+      link: 'Project_2',
+      text: 'Project 2'
+    
+    }, 
+    {
+      link: 'Project_3',
+      text: 'Project 3'
+    }
+  ]
 }
 
 export default data
