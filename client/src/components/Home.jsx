@@ -7,21 +7,20 @@ import React from 'react';
 import ProjectPage from './ProjectPage';
 import { Link } from 'react-scroll'
 import Nav from './Nav';
+import Summary from './Summary';
 
 function Home() {
   const colors = ['bg-primary', 'bg-secondary', 'bg-accent1', 'bg-accent2', 'bg-accent3'];
   const lastName = ['P', 'i', 'e', 'r', 'c', 'e']
 
   return (
-    <main className='flex flex-col items-center justify-center bg-gradient-radial from-accent1 to-accent2'>
-      <section className='flex w-screen justify-center items-center border-2 border-red-500 sticky top-0'>
-        {/* Navigation */}
-        <Nav/>
+    <main className='parent p-0 m-0 items-center justify-center bg-gradient-radial from-accent1 to-accent2'>
+        <section className='flex child h-1/5'>
+          {/* Navigation */}
+          <Nav/>
+        </section>
         {/* Profile picture */}
-        <Profile />
-      </section>
-
-       {/* color pallette*/}
+      {/* color pallette */}
       <div className='flex w-fit h-[1ch]'>
         {colors.map((color ,idx)=>
           <div key={idx} className={`${color}`}>
@@ -31,35 +30,38 @@ function Home() {
       </div>
 
       {/* Name, summary and links*/}
-      <section id='top' className='h-screen'>
-        <h1 className={`flex p-2 ml-[0.20%] text-3xl w-[100%]`}>
-          <span className="flex w-[100%] font-bold">
-              <motion.span 
-                  className="text-accent3"
-                  initial={{opacity: 0}}
-                  animate={{opacity: 1}}
-                  transition={{duration: 0.75, delay:0.5}}
-                  >Mark &nbsp;</motion.span> {lastName.map((letter, idx) => 
-                    <motion.span key = {idx}
-                    initial={{translateX: 1500}}
-                    animate={{translateX: 0}}
-                    transition={{duration: 0.65, delay: (idx+1)*0.5}}
-                    >
-                  {letter}
-              </motion.span>
-              )}
-          </span>
-        </h1>
-        {data.links.map((link, idx) => {
-          return (
-            <SocialIcon key={idx} url={link}/>
-          )
-        })}
-        <p className='bg-primary p-2 rounded-md border-2 border-black'>
-          {data.summary}
-        </p>
-        
-      </section>
+      <Summary/>
+      {/* <section className='flex border-2 border-white h-[66%]'>
+        <section id='top' className='h-screen col-span-2 mt-4 col-start-1 w-[100ch]'>
+          <h1 className={`flex p-2 ml-[0.20%] text-3xl w-[100%]`}>
+            <span className="flex w-[100%] font-bold">
+                <motion.span 
+                    className="text-accent3"
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    transition={{duration: 0.75, delay:0.5}}
+                    >Mark &nbsp;</motion.span> {lastName.map((letter, idx) => 
+                      <motion.span key = {idx}
+                      initial={{translateX: 1500}}
+                      animate={{translateX: 0}}
+                      transition={{duration: 0.65, delay: (idx+1)*0.5}}
+                      >
+                    {letter}
+                </motion.span>
+                )}
+            </span>
+          </h1>
+          {data.links.map((link, idx) => {
+            return (
+              <SocialIcon key={idx} url={link}/>
+              )
+            })}
+          <p className='bg-primary p-2 rounded-md border-2 border-black'>
+            {data.summary}
+          </p>
+        </section>
+        <Profile/>
+      </section> */}
 
       
       {/* Project cards */}
@@ -83,16 +85,17 @@ function Home() {
         )})}
       </section> */}
       {/*Project pages */}
-      {data.projects.map((proj, idx) => {
+      {/* {data.projects.map((proj, idx) => {
         return (
           <section key={proj.id} id={`Project_${proj.id}`}>
             <ProjectPage proj={proj}/>
           </section>
         )
-      })}
+      })} */}
     </main>
   );
 }
 
 export default Home;
 
+ 
