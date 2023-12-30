@@ -1,5 +1,6 @@
 const data = {
-  
+    firstName: "Mark",
+    lastName: "Pierce",
     projects: [
     {
       id: 1,

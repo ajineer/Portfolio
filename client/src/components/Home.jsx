@@ -8,20 +8,18 @@ import ProjectPage from './ProjectPage';
 import { Link } from 'react-scroll'
 import Nav from './Nav';
 import Summary from './Summary';
+import Insignia from './Insignia';
 
 function Home() {
   const colors = ['bg-primary', 'bg-secondary', 'bg-accent1', 'bg-accent2', 'bg-accent3'];
-  const lastName = ['P', 'i', 'e', 'r', 'c', 'e']
 
   return (
-    <main className='parent p-0 m-0 items-center justify-center bg-gradient-radial from-accent1 to-accent2'>
-        <section className='flex child h-1/5'>
-          {/* Navigation */}
-          <Nav/>
-        </section>
-        {/* Profile picture */}
+    <main className='parent p-2 m-0 items-center justify-center bg-gradient-radial from-accent1 to-accent2'>
+        {/* Navigation */}
+        <Nav/>
+
       {/* color pallette */}
-      <div className='flex w-fit h-[1ch]'>
+      <div className='flex w-fit h-[1ch] sticky top-0 z-10'>
         {colors.map((color ,idx)=>
           <div key={idx} className={`${color}`}>
             {color}
@@ -30,7 +28,7 @@ function Home() {
       </div>
 
       {/* Name, summary and links*/}
-      <Summary/>
+      {/* <Summary/> */}
       {/* <section className='flex border-2 border-white h-[66%]'>
         <section id='top' className='h-screen col-span-2 mt-4 col-start-1 w-[100ch]'>
           <h1 className={`flex p-2 ml-[0.20%] text-3xl w-[100%]`}>

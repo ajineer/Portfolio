@@ -1,23 +1,45 @@
 import { Link } from "react-scroll"
 import data from "../projectStore"
+import Insignia from "./Insignia"
 function Nav(){
     return (
-        <nav className='child sticky top-0 mt-4 flex flex-col z-30 bg-accent1 space-x-2 justify-center items-center'>
-          <span className="ml-2 mb-1 text-lg">Navigation</span>
-          <section className="flex mt-2 ml-2">
-          {data.pageLinks.map((link, idx) => {return (
+      <nav className="parent flex sticky flex-col w-fit p-2 ml-2 mt-2 lg:top-0 lg:flex-row lg:justify-evenly lg:w-full lg:m-0 bg-black">
+          <Insignia/>
+          <section className="child flex flex-col w-fit lg:w-3/4 lg:justify-evenly lg:flex lg:flex-row lg:flex-wrap">
+            <Link 
+              className="text-xl text-white hover:bg-secondary hover:rounded-2xl p-1"
+              to="/top"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              >About</Link>
+            <Link 
+              className="text-xl text-white hover:bg-secondary hover:rounded-2xl p-1"
+              to="/projects"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              >Projects</Link>
             <Link
-            key={idx}
-            className={`w-fit text-md h-[100%] hover:bg-primary ${idx===0?'border-t-4 border-l-4 border-l-secondary border-t-secondary': null}`}
-            to={link.link}
-            spy={true} smooth={true} offset={0} duration={500} 
-            >
-              <span className='p-2'>
-                {link.text}
-              </span>
+              className="text-xl text-white hover:bg-secondary hover:rounded-2xl p-1"
+              to="/resume"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              >Resume
             </Link>
-          )})}
-        </section>
+            <Link 
+              className="text-xl text-white hover:bg-secondary hover:rounded-2xl p-1"
+              to="/contact"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              >Contact</Link>
+            </section>
         </nav>
     )
 }

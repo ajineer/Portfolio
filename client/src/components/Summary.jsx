@@ -6,8 +6,6 @@ import React from "react"
 
 function Summary(){
 
-    const lastName = ['P', 'i', 'e', 'r', 'c', 'e']
-
     return (
         <section className='flex border-2 border-white h-[66%]'>
             <section id='top' className='h-screen col-span-2 mt-4 col-start-1 w-[100ch]'>
@@ -18,7 +16,7 @@ function Summary(){
                             initial={{opacity: 0}}
                             animate={{opacity: 1}}
                             transition={{duration: 0.75, delay:0.5}}
-                            >Mark &nbsp;</motion.span> {lastName.map((letter, idx) => 
+                            >{data.firstName} &nbsp;</motion.span> {data.lastName.split("").map((letter, idx) => 
                             <motion.span key = {idx}
                             initial={{translateX: 1500}}
                             animate={{translateX: 0}}
