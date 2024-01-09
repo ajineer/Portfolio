@@ -1,3 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+html { 
+    font-size: 62.5%
+  }
+  body {
+    margin: 0;
+    font: 300 11px/1.4 'Helvetica neue', 'sans-serif';
+    color: #444;
+    background: #275E75;
+    overflow: hidden;
+    display: block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }

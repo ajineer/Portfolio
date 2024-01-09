@@ -5,13 +5,12 @@ import { rotate } from 'mathjs'
 
 function Profile(){
 
-    const borderRadius = ['rounded-tl-full', 'rounded-tr-full', 'rounded-bl-full', 'rounded-br-full']
     
     return (
-        <div className="relative parent flex items-center justify-center rounded-full w-[180px] h-[180px] border-2 border-orange-500">
+        <div className="m-6 relative parent flex items-center justify-center rounded-full w-[300px] h-[300px]">
           <div className='child absolute z-0 h-[100%] w-[100%] bg-gradient-radial from-primary to-accent3 rounded-full border-2 border-black'>
           </div>
-          <div className='child z-20 absolute flex overflow-clip items-center rounded-full h-[60%] w-[60%] border-2 border-purple-500'>
+          <div className='child z-20 absolute flex overflow-clip items-center rounded-full h-[60%] w-[60%]'>
             <img className='child w-[100%] h-[100%]' src={data.profile} alt="Profile"/>
           </div>
           {data.techURL.map((url, idx) => {

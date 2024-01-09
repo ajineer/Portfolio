@@ -1,18 +1,21 @@
-import ProjectPage from "./components/ProjectPage";
-import Home from "./components/Home";
-import { Routes, Route } from "react-router-dom";
-import data from "./projectStore";
-import { useEffect } from "react";
-import React from "react";
+import { Routes, Route } from 'react-router-dom'
+import './App.scss'
+import Layout from './components/Layout.jsx'
+import Home from  './components/Home.jsx'
+import About from './components/About.jsx'
 
 function App() {
-  const colors = ['bg-primary', 'bg-secondary', 'bg-accent1', 'bg-accent2', 'bg-accent3'];
-  const lastName = ['P', 'i', 'e', 'r', 'c', 'e']  
 
   return (
-    <Home/>
-  );
+    <>
+      <Routes>
+          <Route path='/' element={<Layout/>} >
+            <Route index element={<Home />} />
+            <Route path='/about' element={<About />} />
+          </Route>
+      </Routes>
+    </>
+  )
 }
 
-export default App;
-
+export default App
