@@ -4,6 +4,7 @@ import mLogo from '../assets/images/mLogo4.svg'
 import { useState, useEffect } from 'react'
 import AnimatedLetters from './AnimatedLetters'
 import Logo from './Logo'
+import Loader from 'react-loaders'
 
 const Home = () => {
 
@@ -18,33 +19,36 @@ const Home = () => {
       }, [])
 
     return (
-        <div className="container home-page">
-            <div className="text-zone">
-                <h1>
-                    <span className={letterClass}>H</span>
-                    <span className={`${letterClass} _12`}>i,</span>
-                    <br/>
-                    <span className={`${letterClass} _13`}>I</span> 
-                    <span className={`${letterClass} _14`}>'m</span> 
-                    <img 
-                        src={mLogo}
-                    />
-                    <AnimatedLetters 
-                        letterClass={letterClass} 
-                        strArray={nameArray} 
-                        idx={15}
-                    />
-                    <br />
-                    <AnimatedLetters 
-                        letterClass={letterClass} 
-                        strArray={titleArray} 
-                        idx={22}/>
-               </h1>
-               <h2>Full Stack Developer / Python / Javascript</h2>
-               <Link to="/contact" className="flat-button">Contact Me</Link>
+        <>
+            <div className="container home-page">
+                <div className="text-zone">
+                    <h1>
+                        <span className={letterClass}>H</span>
+                        <span className={`${letterClass} _12`}>i,</span>
+                        <br/>
+                        <span className={`${letterClass} _13`}>I</span> 
+                        <span className={`${letterClass} _14`}>'m</span> 
+                        <img 
+                            src={mLogo}
+                        />
+                        <AnimatedLetters 
+                            letterClass={letterClass} 
+                            strArray={nameArray} 
+                            idx={15}
+                        />
+                        <br />
+                        <AnimatedLetters 
+                            letterClass={letterClass} 
+                            strArray={titleArray} 
+                            idx={22}/>
+                    </h1>
+                        <h2>Full Stack Developer / Python / Javascript</h2>
+                        <Link to="/contact" className="flat-button">Contact Me</Link>
+                </div>
+                {/* <Logo /> */}
             </div>
-            {/* <Logo /> */}
-        </div>
+            <Loader type='ball-clip-rotate-multiple'/>
+        </>
     )
 }
 
