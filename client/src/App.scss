@@ -16,6 +16,11 @@ $primary-color: #ED8E00;
   src: url('./assets/fonts/CoolveticaRg-Regular.woff2') format('woff2');
 }
 
+@font-face{
+  font-family: 'Beau Rivage';
+  src: url('./assets/fonts/BeauRivage-Regular.ttf') formate('ttf');
+}
+
 input,
 textarea {
   font-family: "Helvetica Neue";
