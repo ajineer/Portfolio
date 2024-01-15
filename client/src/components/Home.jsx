@@ -45,7 +45,6 @@ const Home = () => {
                         <h2>Full Stack Developer / Python / Javascript</h2>
                         <Link to="/contact" className="flat-button">Contact Me</Link>
                 </div>
-                {/* <Logo /> */}
             </div>
             <Loader type='ball-clip-rotate-multiple'/>
         </>

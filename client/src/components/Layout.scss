@@ -65,7 +65,6 @@
     width: 600px;
     height: 350px;
     background-color: #275E75;
-    // border: red solid 2px;
     animation: slide 3s forwards;
 }
 
@@ -125,8 +124,9 @@
 
 .container.contact-page,
 .container.about-page,
-.container.portfolio-page {
-    
+.container.portfolio-page,
+.container.proj {
+
     h1 { 
         font-size: 53px;
         font-family: 'Coolvetica';
