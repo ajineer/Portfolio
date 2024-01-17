@@ -2,22 +2,24 @@ import data from "../projectStore"
 import AnimatedLetters from "./AnimatedLetters"
 import Loader from "react-loaders"
 import './Projects.scss'
-import Project from './Project.jsx'
+import { useState } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
 const Projects = () => {
+
+    const [selProj, setSelProj] = useState(data.projects[0])
 
     return (
         <>
             <div className="container proj">
-                <h1> 
-                    <AnimatedLetters strArray={"Projects".split("")}/>
-                </h1>
-                <div className="proj-container">
-                    {data.projects.map((proj, idx) => {
-                        return (
-                            <Project key={idx} proj={proj} idx={idx}/>
-                            )
-                        })}
+                <div className="text-zone">
+                    <h1> 
+                        <AnimatedLetters strArray={"Projects".split("")}/>
+                    </h1>
+                    <img src={selProj.image}/>
+                    <FontAwesomeIcon icon={faArrowLeft} color="#fff"/>
+                    <FontAwesomeIcon icon={faArrowRight} color="#fff"/>
                 </div>
             </div>
             <Loader type='ball-clip-rotate-multiple'/>

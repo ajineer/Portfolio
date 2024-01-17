@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import './ForLoop.scss'
+import './Typing.scss'
 
 const Type = ({ string }) => {
     
