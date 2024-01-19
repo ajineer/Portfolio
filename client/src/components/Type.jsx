@@ -8,13 +8,12 @@ const Type = ({ string }) => {
     useEffect(() => {
         const timeout = setTimeout(() => {
             setTyped(string.slice(0, typed.length + 1))
-        }, 30)
-
+        }, 100)
         return () => clearTimeout(timeout)
     }, [typed, string])
     
     return (
-        <span>{typed}<br/></span>
+        <span>{typed}</span>
     )
 }
 

@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faCode, faEnvelope, faHome, faLink, faUser} from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import mLogo from '../assets/images/mLogo4.svg'
+import data from '../projectStore'
 
 const Sidebar = () => {
     return (
@@ -27,16 +28,15 @@ const Sidebar = () => {
             </nav>
             <ul>
                 <li>
-                    <a>
-                        <FontAwesomeIcon icon={faLinkedin} />
+                    <a href={data.links[0]} target="_blank" rel='noreferrer'>
+                        <FontAwesomeIcon className='anchor-icon' icon={faLinkedin} color='#4d4d4e'/>
                     </a>
                 </li>
                 <li>
-                    <a>
-                        <FontAwesomeIcon icon={faGithub} />
+                    <a href={data.links[1]} target="_blank" rel='noreferrer'>
+                        <FontAwesomeIcon className='anchor-icon' icon={faGithub} color='#4d4d4e'/>
                     </a>
                 </li>
-                
             </ul>
         </div>
     )

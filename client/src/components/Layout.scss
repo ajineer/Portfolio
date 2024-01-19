@@ -40,15 +40,6 @@
 }
 
 
-.for-loop {
-    position: absolute;
-    width: 200px;
-    top: 40px;
-    right: 200px;
-    opacity: 0.4;
-    transform: scalex(1.5) scaley(0.8);
-}
-
 .binary-tree {
     z-index: 0;
     position: absolute;
@@ -78,7 +69,7 @@
 }
 
 .map {
-    z-index: 0;
+    z-index: -1;
     position: absolute;
     bottom: 80px;
     right: 300px;
@@ -87,7 +78,7 @@
 }
 
 .map-mask {
-    z-index: 1;
+    z-index: 0;
     position: absolute;
     display: inline-block;
     width: 37px;
@@ -168,6 +159,11 @@
         vertical-align: middle;
         display: table-cell;
         max-height: 90%;
+
+        .buttons{
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 
     .text-animate-hover {

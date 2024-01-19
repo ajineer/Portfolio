@@ -117,7 +117,9 @@
                 line-height: 16px;
 
                 &:hover {
-                    color: #ED8E00;
+                    .anchor-icon{
+                        color: #ED8E00;
+                    }
                 }
             }
         }
