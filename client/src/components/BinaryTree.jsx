@@ -1,5 +1,5 @@
 import BT from '../assets/images/BTree.svg'
-import './Layout.scss'
+import './BinaryTree.scss'
 
 const BinaryTree = () => {
     return (

@@ -1,0 +1,34 @@
+.LL-container{
+    position: absolute;
+    overflow: hidden;
+    height: 80px;
+    bottom: 80px;
+    left: 300px;
+    width: 300px;
+    height: 80px;
+
+    .LinkedList {
+        z-index: 0;
+        opacity: 0.4;
+        width: 100%;
+        height: 100%;
+    }
+
+    .mask{
+        z-index: 1;
+        position: inherit;
+        width: 100%;
+        height: 100%;
+        background-color: #275E75;
+        animation: slide 3s forwards;
+    }
+
+    @keyframes slide {
+        from{
+            transform: translateX(0);
+        }
+        to{
+            transform: translateX(100%);
+        }
+    }
+}

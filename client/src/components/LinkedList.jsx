@@ -1,13 +1,13 @@
 import LL from '../assets/images/LinkedList.svg'
-import './Layout.scss'
+import './LinkedList.scss'
 
 const LinkedList = () => {
 
     return (
-        <>
-            <div className='LL-mask'></div>
+        <div className='LL-container'>
+            <div className='mask'></div>
             <img className='LinkedList' src={LL}/>
-        </>
+        </div>
     )
 }
 

@@ -1,0 +1,29 @@
+.map {
+    z-index: -1;
+    position: absolute;
+    bottom: 80px;
+    right: 300px;
+    width: 300px;
+    opacity: 0.4;
+}
+
+.map-mask {
+    z-index: 0;
+    position: absolute;
+    display: inline-block;
+    width: 37px;
+    height: 180px;
+    bottom: 80px;
+    right: 527px;
+    background-color: #275E75;
+    animation: slide3 3s forwards
+}
+
+@keyframes slide3 {
+    from {
+        transform: translateY(0%)
+    }
+    to {
+        transform: translatey(100%);
+    }
+}

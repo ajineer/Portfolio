@@ -1,0 +1,27 @@
+.binary-tree {
+    z-index: 0;
+    position: absolute;
+    left: -210px;
+    top: -36px;
+    width: 600px;
+    opacity: 0.4;
+}
+.bt-mask {
+    z-index: 1;
+    display: block;
+    position: absolute;
+    top: -36px;
+    width: 600px;
+    height: 350px;
+    background-color: #275E75;
+    animation: bt-slide 3s forwards;
+}
+
+@keyframes bt-slide {
+    from {
+        transform: translateY(0%)
+    }
+    to {
+        transform: translateY(-200%)
+    }
+}

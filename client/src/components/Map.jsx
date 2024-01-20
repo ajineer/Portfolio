@@ -1,5 +1,5 @@
 import Mp from "../assets/images/Map.svg"
-import "./Layout.scss"
+import "./Map.scss"
 
 
 const Map = () => {
