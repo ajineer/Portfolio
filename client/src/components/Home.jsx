@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 import mLogo from '../assets/images/mLogo4.svg'
 import { useState, useEffect } from 'react'
 import AnimatedLetters from './AnimatedLetters'
-import Logo from './Logo'
 import Loader from 'react-loaders'
 
 const Home = () => {
