@@ -1,11 +1,10 @@
-import data from "../projectStore"
+import data from "../data/projectStore"
 import AnimatedLetters from "./AnimatedLetters"
 import Loader from "react-loaders"
 import './Projects.scss'
 import './AnimatedLetters.scss'
 import { useEffect, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import { faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons"
 
 const Projects = () => {   
@@ -36,12 +35,13 @@ const Projects = () => {
                                         letterClass={letterClass} 
                                         strArray={proj.name.split("")} 
                                         idx={15}
-                                    />
+                                        />
+                                    
                                     <img src={proj.image}/>
                                     <div className="proj-tech">
                                         {proj.stack.map((t, index) => {
                                             return (
-                                                <img src={t}/>
+                                                <img key={index} src={t}/>
                                             )
                                         })}
                                     </div>

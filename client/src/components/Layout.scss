@@ -2,6 +2,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
+    z-index: 0;
 }
 
 .background {
@@ -96,38 +97,49 @@
     .container {
       position: initial;
       height: auto;
-      min-height: auto;
+      min-height: 100%;
+      width: 90%;
+      // margin-left: 20%;
   
       &.contact-page,
       &.about-page,
-      &.portfolio-page,
+      &.home-page,
       &.proj {
         .text-zone {
           position: initial;
           transform: none;
-          width: 100%;
+          width: 90%;
           display: block;
           padding: 20px;
           box-sizing: border-box;
+          margin-left: 10%;
+        }
+        .projects{
+          flex-direction: column;
+          justify-content: start;
+          height: 50rem;
+          width: inherit;
+          gap: 20%;
+          overflow: scroll;
+          .project-card{
+            width: 90%;
+            .proj-links{
+              a{
+                &:hover {
+                  .anchor-symbol{
+                      color: #ED8E00;
+                  }
+              }
+              }
+            }
+          }
         }
       }
-  
-      &.portfolio-page {
+      .stage-cube-cont {
+        position: inherit;
         width: 100%;
-        padding: 20px;
-        box-sizing: border-box;
-  
-        h1.page-title {
-          margin-left: 20px;
-          margin-top: 20px;
-        }
+        height: 0%;
+        overflow: visible;
       }
-    }
-  
-    .stage-cube-cont {
-      position: initial;
-      width: 100%;
-      height: 0%;
-      overflow: visible;
     }
   }

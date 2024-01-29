@@ -4,7 +4,7 @@ const data = {
     projects: [
     {
       id: 1,
-      name: 'Task Master',
+      name: 'TASK MASTER',
       date_started: 'June, 2023',
       date_finished: 'October, 2023',
       description: 'A user-friendly to-do list tracker for efficient task management.',
@@ -22,7 +22,7 @@ const data = {
     },
     {
       id: 2,
-      name: 'Prackr',
+      name: 'PRACKR',
       date_started: 'July, 2023',
       date_finished: 'October, 2023',
       description: 'helps users track their pantry items and create gorcery lists.',
@@ -40,7 +40,7 @@ const data = {
     },
     {
       id: 3,
-      name: 'Planly',
+      name: 'PLANLY',
       date_started: 'September, 2023',
       date_finished: 'October, 2023',
       description: 'An app that tracks and schedules a users events with an interactive calendar and to-do lists.',

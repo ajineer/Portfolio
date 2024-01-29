@@ -1,5 +1,5 @@
 .binary-tree {
-    z-index: 0;
+    z-index: -1;
     position: absolute;
     left: -210px;
     top: -36px;
@@ -7,7 +7,7 @@
     opacity: 0.4;
 }
 .bt-mask {
-    z-index: 1;
+    z-index: 0;
     display: block;
     position: absolute;
     top: -36px;

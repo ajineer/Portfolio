@@ -4,10 +4,10 @@ import "./Map.scss"
 
 const Map = () => {
     return (
-        <>
+        <div className='map-wrapper'>
             <div className='map-mask'></div>
             <img className='map' src={Mp}/>
-        </>
+        </div>
     )
 }
 
