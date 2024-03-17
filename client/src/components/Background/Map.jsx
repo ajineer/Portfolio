@@ -1,4 +1,4 @@
-import Mp from "../assets/images/Map.svg"
+import Mp from "../../assets/images/Map.svg"
 import "./Map.scss"
 
 

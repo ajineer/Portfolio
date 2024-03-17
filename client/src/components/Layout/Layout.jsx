@@ -1,10 +1,10 @@
 import './Layout.scss';
 import { Outlet } from 'react-router-dom';
-import Sidebar from './Sidebar';
-import LinkedList from './LinkedList.jsx';
-import BinaryTree from './BinaryTree.jsx';
-import Map from './Map.jsx';
-import FL from './Typing.jsx'
+import Sidebar from '../Sidebar/Sidebar.jsx';
+import LinkedList from '../Background/LinkedList.jsx';
+import BinaryTree from '../Background/BinaryTree.jsx';
+import Map from '../Background/Map.jsx';
+import FL from '../Background/Typing.jsx'
 
 const Layout = () => {
 

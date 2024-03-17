@@ -1,4 +1,4 @@
-import BT from '../assets/images/BTree.svg'
+import BT from '../../assets/images/BTree.svg'
 import './BinaryTree.scss'
 
 const BinaryTree = () => {

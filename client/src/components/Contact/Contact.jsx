@@ -1,6 +1,6 @@
 import Loader from 'react-loaders'
 import './Contact.scss'
-import AnimatedLetters from './AnimatedLetters'
+import AnimatedLetters from '../Background/AnimatedLetters'
 import { useEffect, useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
 
@@ -20,19 +20,15 @@ const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault()
         emailjs
-            .sendForm(
-                'gmail',
-                'template_afmcaw5',
-                refForm.current,
-                'M5vCAsdv5lAk82EFV'
-            )
+            .sendForm('service_t8i6ohr', 'template_afmcaw5', refForm.current, 'M5vCAsdv5lAk82EFV')
             .then(
                 () => {
                     alert('Message successfully sent!')
                     window.location.reload(false)
                 },
-                () => {
-                    alert('Failed to send message, try again')
+                (error) => {
+                    alert(`Failed...`)
+                    console.log(error.text)
                 }
             )
     }
@@ -49,7 +45,7 @@ const Contact = () => {
                         if you have questions or requests don't hesitate to contact me using the form below. 
                     </p>
                     <div className='contact-form'>
-                        <form ref={refForm} onSubmit={sendEmail}>
+                        <form ref={refForm} onSubmit={(e) => sendEmail(e)}>
                             <ul>
                                 <li className='half'>
                                     <input type='text' name='name' placeholder='Name' required />

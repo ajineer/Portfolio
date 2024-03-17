@@ -1,4 +1,4 @@
-import LL from '../assets/images/LinkedList.svg'
+import LL from '../../assets/images/LinkedList.svg'
 import './LinkedList.scss'
 
 const LinkedList = () => {

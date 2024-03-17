@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom'
 import './App.scss'
-import Layout from './components/Layout.jsx'
-import Home from  './components/Home.jsx'
-import About from './components/About.jsx'
-import Contact from './components/Contact.jsx'
-import Projects from './components/Projects.jsx'
+import Layout from './components/Layout/Layout.jsx'
+import Home from  './components/Home/Home.jsx'
+import About from './components/About/About.jsx'
+import Contact from './components/Contact/Contact.jsx'
+import Projects from './components/Projects/Projects.jsx'
 
 function App() {
 

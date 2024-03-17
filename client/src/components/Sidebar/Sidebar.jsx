@@ -3,8 +3,8 @@ import { Link, NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' 
 import { faBars, faCode, faEnvelope, faHome, faUser} from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import mLogo from '../assets/images/mLogo4.svg'
-import data from '../data/projectStore'
+import mLogo from '../../assets/images/mLogo4.svg'
+import data from '../../data/projectStore'
 import { useState } from 'react'
 
 const Sidebar = () => {

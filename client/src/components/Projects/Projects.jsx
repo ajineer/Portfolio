@@ -1,8 +1,8 @@
-import data from "../data/projectStore"
-import AnimatedLetters from "./AnimatedLetters"
+import data from "../../data/projectStore"
+import AnimatedLetters from "../Background/AnimatedLetters"
 import Loader from "react-loaders"
 import './Projects.scss'
-import './AnimatedLetters.scss'
+import '../Background/AnimatedLetters.scss'
 import { useEffect, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons"

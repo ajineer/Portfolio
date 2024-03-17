@@ -1,8 +1,8 @@
 import './Home.scss'
 import { Link } from "react-router-dom"
-import mLogo from '../assets/images/mLogo4.svg'
+import mLogo from '../../assets/images/mLogo4.svg'
 import { useState, useEffect } from 'react'
-import AnimatedLetters from './AnimatedLetters'
+import AnimatedLetters from '../Background/AnimatedLetters'
 import Loader from 'react-loaders'
 
 const Home = () => {
