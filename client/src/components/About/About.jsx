@@ -32,8 +32,8 @@ const About = () => {
                         I'm a full stack software enginner thar recently graduated from the Flatiron school.
                     </p>
                     <p>
-                        Befoere deciding to commit myself to learning software engineering, I worked as a mathematics tutor. 
-                        I love problem solving but math became to0 easy, so i decided to switch gears to math's close neighbor computer science. 
+                        Before deciding to commit myself to learning software engineering, I worked as a mathematics tutor. 
+                        I love problem solving but math became too easy, so i decided to switch gears to math's close neighbor computer science. 
                         Here I was confronted with more challenges, but that's what I love, learning to solve new problems I've never seen before.
                     </p>
                     <p>
