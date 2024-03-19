@@ -67,7 +67,7 @@ const Contact = () => {
                     </div>
                 </div> 
             </div>
-            <Loader type='ball-clip-rotate-multiple'/>
+            <Loader className='loader' type='ball-clip-rotate-multiple'/>
         </>
     )
 }
