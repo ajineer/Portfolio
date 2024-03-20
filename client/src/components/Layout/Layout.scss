@@ -11,14 +11,13 @@
 }
 
 .container {
-    width: 100%;
+    // border: 2px solid yellow;
+    width: 90%;
     will-change: contents;
     height: 90%;
     min-height: 566px;
-    position: absolute;
     opacity: 0;
-    top: 5%;
-    margin: 0 auto;
+    margin: 35px auto;
     z-index: 1;
     transform-style: preserve-3d;
     animation: fadeIn 1s forwards;
@@ -63,14 +62,11 @@
     }
 
     .text-zone {
-        position: absolute;
-        left: 10%;
-        top: 50%;
-        transform: translateY(-50%);
+        display: block;
         width: 35%;
-        vertical-align: middle;
-        display: table-cell;
-        max-height: 90%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
 
         .buttons{
             margin-left: auto;

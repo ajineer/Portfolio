@@ -9,7 +9,6 @@ const Home = () => {
 
     const [letterClass, setLetterClass] = useState('text-animate')
     const nameArray = ['a', 'r', 'k']
-    const titleArray = ['w', 'e', 'b', ' ','\n d','e','v','e','l','o','p','e','r','.']
 
     useEffect(() => {
         setTimeout(() => {
@@ -36,13 +35,9 @@ const Home = () => {
                             idx={15}
                         />
                         <br />
-                        {/* <AnimatedLetters 
-                            letterClass={letterClass} 
-                            strArray={titleArray} 
-                            idx={22}/> */}
                     </h1>
-                        <h2>Full Stack Developer / Python / Javascript</h2>
-                        <Link to="/contact" className="flat-button">Contact Me</Link>
+                    <h2 classname='tech-stacks'>Full Stack Developer / Python / Javascript</h2>
+                    <Link to="/contact" className="flat-button">Contact Me</Link>
                 </div>
             </div>
             <Loader className='loader' type='ball-clip-rotate-multiple'/>

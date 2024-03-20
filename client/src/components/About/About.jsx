@@ -40,26 +40,26 @@ const About = () => {
                         In the future I hope to apply my previous math skills along with my newly aquired software engineering skills either as a 
                         front-end developer, back-end or both.
                     </p>
-                </div>
-                <div className='stage-cube-cont'>
-                    <div className='cubespinner'>
-                        <div className='face1'>
-                            <FontAwesomeIcon icon={faPython} />
-                        </div>
-                        <div className='face2'>
-                            <FontAwesomeIcon icon={faHtml5} />
-                        </div>
-                        <div className='face3'>
-                            <FontAwesomeIcon icon={faCss3} />
-                        </div>
-                        <div className='face4'>
-                            <FontAwesomeIcon icon={faReact} />
-                        </div>
-                        <div className='face5'>
-                            <FontAwesomeIcon icon={faFigma} />
-                        </div>
-                        <div className='face6'>
-                            <FontAwesomeIcon icon={faGithub} />
+                    <div className='stage-cube-cont'>
+                        <div className='cubespinner'>
+                            <div className='face1'>
+                                <FontAwesomeIcon icon={faPython} />
+                            </div>
+                            <div className='face2'>
+                                <FontAwesomeIcon icon={faHtml5} />
+                            </div>
+                            <div className='face3'>
+                                <FontAwesomeIcon icon={faCss3} />
+                            </div>
+                            <div className='face4'>
+                                <FontAwesomeIcon icon={faReact} />
+                            </div>
+                            <div className='face5'>
+                                <FontAwesomeIcon icon={faFigma} />
+                            </div>
+                            <div className='face6'>
+                                <FontAwesomeIcon icon={faGithub} />
+                            </div>
                         </div>
                     </div>
                 </div>
